@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виллы Al Bahar - Предложение</title>
+    <link rel="stylesheet" href="style.css/qwe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV5U0B9tU0l5N4h3zjC3gyAvxqYQTuYfR0rY9FD2O8vN4c/Uv9xownXSAq7xqk4clE7hQx4H1G1YxJ6t6Ib6cQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Сон Моряка</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="index.html#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                        <li><a href="index.html#rooms"><i class="fas fa-bed"></i> Номера</a></li>
+                        <li><a href="index.html#services"><i class="fas fa-concierge-bell"></i> Услуги</a></li>
+                        <li><a href="index.html#offers"><i class="fas fa-gift"></i> Предложения</a></li>
+                        <li><a href="index.html#contact"><i class="fas fa-phone"></i> Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="service-page active" style="padding-top: 140px;">
+        <section class="booking-section" style="background: #fff; padding-bottom: 70px;">
+            <div class="container">
+                <h2 class="section-title">Виллы Al Bahar</h2>
+                <div class="service-content-wrapper" style="flex-direction: column; gap: 2rem;">
+                    <div class="service-detail">
+                        <h3>Роскошный семейный отдых</h3>
+                        <p>Просторные виллы с собственными террасами, личным обслуживанием и видом на море. Идеальный выбор для тех, кто хочет максимальный комфорт и приватность.</p>
+                        <div class="service-gallery">
+                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3')"></div>
+                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3')"></div>
+                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3')"></div>
+                        </div>
+                    </div>
+
+                    <!-- РАЗДЕЛ 1: ВЫБОР НОМЕРА -->
+                    <div style="margin-bottom: 3rem;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #000; font-family: 'Playfair Display', serif;">
+                            <i class="fas fa-bed"></i> Выберите виллу
+                        </h3>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                            <div class="room-selection-card" onclick="selectRoomType('villas')" style="cursor: pointer; padding: 1.5rem; border: 3px solid #000; border-radius: 15px; transition: all 0.3s ease; text-align: center; background: #f5f5f5;" id="room-villas">
+                                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;"><i class="fas fa-umbrella"></i></div>
+                                <h4 style="margin-bottom: 0.5rem;">Виллы Al Bahar</h4>
+                                <p style="color: #666; margin-bottom: 1rem; font-size: 0.9rem;">Просторные виллы с террасами</p>
+                                <div style="font-size: 1.3rem; font-weight: 600; color: #000;">12 000 ₽/ночь</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- РАЗДЕЛ 2: ЭКСКЛЮЗИВНЫЕ ПРЕДЛОЖЕНИЯ -->
+                    <div style="margin-bottom: 3rem; background: #f9f9f9; padding: 2rem; border-radius: 15px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #000; font-family: 'Playfair Display', serif;">
+                            <i class="fas fa-gift"></i> Эксклюзивные предложения
+                        </h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #000;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <input type="checkbox" id="offer-family" onchange="updatePrice()" style="margin-right: 1rem;">
+                                    <label for="offer-family" style="cursor: pointer; font-weight: 600;">Семейный пакет</label>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Скидки для детей и спец. условия</p>
+                                <div style="font-size: 1.1rem; color: #000; font-weight: 600;">-15% от стоимости</div>
+                            </div>
+
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #000;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <input type="checkbox" id="offer-early" onchange="updatePrice()" style="margin-right: 1rem;">
+                                    <label for="offer-early" style="cursor: pointer; font-weight: 600;">Раннее бронирование</label>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Забронируйте заранее и получите скидку</p>
+                                <div style="font-size: 1.1rem; color: #000; font-weight: 600;">-20% от стоимости</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- РАЗДЕЛ 3: НЕОБЫКНОВЕННЫЕ ВПЕЧАТЛЕНИЯ -->
+                    <div style="margin-bottom: 3rem; background: #f5f5f5; padding: 2rem; border-radius: 15px;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #000; font-family: 'Playfair Display', serif;">
+                            <i class="fas fa-star"></i> Необыкновенные впечатления
+                        </h3>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #666;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <input type="checkbox" id="exp-beach" onchange="updatePrice()" style="margin-right: 1rem;">
+                                    <label for="exp-beach" style="cursor: pointer; font-weight: 600;">Частный пляж</label>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Уютная пляжная зона</p>
+                                <div style="font-size: 1.1rem; color: #000; font-weight: 600;">+ 1 500 ₽</div>
+                            </div>
+
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #666;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <input type="checkbox" id="exp-aqua" onchange="updatePrice()" style="margin-right: 1rem;">
+                                    <label for="exp-aqua" style="cursor: pointer; font-weight: 600;">Аквапарк</label>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Весёлые развлечения</p>
+                                <div style="font-size: 1.1rem; color: #000; font-weight: 600;">+ 2 000 ₽</div>
+                            </div>
+
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #666;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <input type="checkbox" id="exp-kids" onchange="updatePrice()" style="margin-right: 1rem;">
+                                    <label for="exp-kids" style="cursor: pointer; font-weight: 600;">KiDS Club</label>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Игры для детей</p>
+                                <div style="font-size: 1.1rem; color: #000; font-weight: 600;">+ 1 000 ₽/день</div>
+                            </div>
+
+                            <div style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #666;">
+                                <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                    <input type="checkbox" id="exp-spa" onchange="updatePrice()" style="margin-right: 1rem;">
+                                    <label for="exp-spa" style="cursor: pointer; font-weight: 600;">Talise Spa</label>
+                                </div>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">Спа-услуги</p>
+                                <div style="font-size: 1.1rem; color: #000; font-weight: 600;">+ 3 000 ₽</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- РАЗДЕЛ 4: ПАРАМЕТРЫ БРОНИРОВАНИЯ -->
+                    <div style="margin-bottom: 3rem; background: #fff; padding: 2rem; border-radius: 15px; border: 2px solid #ddd;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #000; font-family: 'Playfair Display', serif;">
+                            <i class="fas fa-calendar"></i> Параметры бронирования
+                        </h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; width: 100%;">
+                            <div style="background: #f9f9f9; padding: 1rem; border-radius: 10px;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;"><i class="fas fa-user"></i> Взрослых</label>
+                                <div style="display: flex; align-items: center; justify-content: space-around;">
+                                    <button class="counter-btn" onclick="updateBooking('adults', -1)">−</button>
+                                    <span style="font-size: 1.2rem; font-weight: 600;" id="adults-count">1</span>
+                                    <button class="counter-btn" onclick="updateBooking('adults', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div style="background: #f9f9f9; padding: 1rem; border-radius: 10px;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;"><i class="fas fa-child"></i> Детей</label>
+                                <div style="display: flex; align-items: center; justify-content: space-around;">
+                                    <button class="counter-btn" onclick="updateBooking('children', -1)">−</button>
+                                    <span style="font-size: 1.2rem; font-weight: 600;" id="children-count">0</span>
+                                    <button class="counter-btn" onclick="updateBooking('children', 1)">+</button>
+                                </div>
+                            </div>
+
+                            <div style="background: #f9f9f9; padding: 1rem; border-radius: 10px;">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;"><i class="fas fa-moon"></i> Ночей</label>
+                                <div style="display: flex; align-items: center; justify-content: space-around;">
+                                    <button class="counter-btn" onclick="updateBooking('nights', -1)">−</button>
+                                    <span style="font-size: 1.2rem; font-weight: 600;" id="nights-count">1</span>
+                                    <button class="counter-btn" onclick="updateBooking('nights', 1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- РАЗДЕЛ 5: ИТОГОВАЯ СТОИМОСТЬ -->
+                    <div style="background: #000; color: white; padding: 2.5rem; border-radius: 15px; margin-bottom: 2rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                            <div>
+                                <h4 style="font-size: 1.2rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">
+                                    <i class="fas fa-clipboard-list"></i> Ваше бронирование
+                                </h4>
+                                <div style="line-height: 2;">
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Номер:</span>
+                                        <span id="summary-room">Виллы Al Bahar</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Гости:</span>
+                                        <span id="summary-guests">1 взрослый, 0 детей</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Ночей:</span>
+                                        <span id="summary-nights">1</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span>Цена за ночь:</span>
+                                        <span id="summary-price">12 000 ₽</span>
+                                    </div>
+                                    <div id="selected-offers" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #666;"></div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                                    <div style="font-size: 0.9rem; margin-bottom: 0.5rem;">ИТОГОВАЯ СТОИМОСТЬ</div>
+                                    <div style="font-size: 2.5rem; font-weight: 700;" id="total-price">12 000 ₽</div>
+                                    <div style="font-size: 0.8rem; color: #ccc; margin-top: 0.5rem;">за весь период</div>
+                                </div>
+                                <button onclick="confirmBooking()" style="width: 100%; padding: 1rem; background: #fff; color: #000; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease;">
+                                    Подтвердить бронирование
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <a href="index.html#offers" class="btn" style="display: inline-block;"><i class="fas fa-arrow-left"></i> Вернуться</a>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html#home">Главная</a>
+                <a href="index.html#about">О нас</a>
+                <a href="index.html#rooms">Номера</a>
+                <a href="index.html#services">Услуги</a>
+                <a href="index.html#offers">Предложения</a>
+                <a href="index.html#contact">Контакты</a>
+            </div>
+            <p>&copy; 2024 Отель "Сон моряка". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="booking.js"></script>
+    <script>
+        let selectedRoomType = 'villas';
+        let bookingData = {
+            adults: 1,
+            children: 0,
+            nights: 1,
+            offers: [],
+            experiences: []
+        };
+
+        function selectRoomType(type) {
+            selectedRoomType = type;
+            document.querySelectorAll('.room-selection-card').forEach(card => {
+                card.style.borderColor = '#ddd';
+                card.style.background = '#f5f5f5';
+            });
+            document.getElementById('room-' + type).style.borderColor = '#000';
+            document.getElementById('room-' + type).style.background = '#fff';
+            updatePrice();
+        }
+
+        function updateBooking(type, delta) {
+            if (type === 'adults') {
+                bookingData.adults = Math.max(1, bookingData.adults + delta);
+                document.getElementById('adults-count').textContent = bookingData.adults;
+            } else if (type === 'children') {
+                bookingData.children = Math.max(0, bookingData.children + delta);
+                document.getElementById('children-count').textContent = bookingData.children;
+            } else if (type === 'nights') {
+                bookingData.nights = Math.max(1, bookingData.nights + delta);
+                document.getElementById('nights-count').textContent = bookingData.nights;
+            }
+            updatePrice();
+        }
+
+        function updatePrice() {
+            // Обновляем выбранные предложения
+            bookingData.offers = [];
+            if (document.getElementById('offer-family').checked) bookingData.offers.push('family');
+            if (document.getElementById('offer-early').checked) bookingData.offers.push('early');
+
+            // Обновляем выбранные впечатления
+            bookingData.experiences = [];
+            if (document.getElementById('exp-beach').checked) bookingData.experiences.push('beach');
+            if (document.getElementById('exp-aqua').checked) bookingData.experiences.push('aqua');
+            if (document.getElementById('exp-kids').checked) bookingData.experiences.push('kids');
+            if (document.getElementById('exp-spa').checked) bookingData.experiences.push('spa');
+
+            // Обновляем выбранные экскурсии
+            bookingData.tours = [];
+            if (document.getElementById('tour-city') && document.getElementById('tour-city').checked) bookingData.tours.push('city');
+            if (document.getElementById('tour-mountain') && document.getElementById('tour-mountain').checked) bookingData.tours.push('mountain');
+
+            // Рассчитываем цену
+            let basePrice = roomPrices[selectedRoomType] || 12000;
+            let totalPrice = basePrice * bookingData.nights;
+            let discount = 1;
+
+            // Применяем скидки
+            if (bookingData.offers.includes('family')) discount *= 0.85; // 15% скидка
+            if (bookingData.offers.includes('early')) discount *= 0.8; // 20% скидка
+            totalPrice *= discount;
+
+            // Добавляем доплату за дополнительных взрослых
+            let adultSurcharge = (bookingData.adults - 1) * 500 * bookingData.nights;
+            totalPrice += adultSurcharge;
+
+            // Добавляем доплату за детей
+            let childSurcharge = bookingData.children * 300 * bookingData.nights;
+            totalPrice += childSurcharge;
+
+            // Добавляем дополнительные услуги
+            bookingData.experiences.forEach(exp => {
+                if (exp === 'beach') totalPrice += 1500;
+                else if (exp === 'aqua') totalPrice += 2000;
+                else if (exp === 'kids') totalPrice += 1000 * bookingData.nights;
+                else if (exp === 'spa') totalPrice += 3000;
+            });
+
+            // Добавляем экскурсии
+            bookingData.tours.forEach(tour => {
+                if (tour === 'city') totalPrice += 2500;
+                else if (tour === 'mountain') totalPrice += 3500;
+            });
+
+            // Обновляем итоговую стоимость
+            document.getElementById('total-price').textContent = totalPrice.toLocaleString() + ' ₽';
+
+            // Обновляем сводку
+            document.getElementById('summary-guests').textContent = bookingData.adults + ' взрослый, ' + bookingData.children + ' детей';
+            document.getElementById('summary-nights').textContent = bookingData.nights;
+            document.getElementById('summary-price').textContent = basePrice.toLocaleString() + ' ₽';
+
+            // Обновляем выбранные предложения
+            let offersHtml = '';
+            if (bookingData.offers.includes('family')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Семейный пакет:</span><span>-15%</span></div>';
+            }
+            if (bookingData.offers.includes('early')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Раннее бронирование:</span><span>-20%</span></div>';
+            }
+
+            // Показываем доплату за взрослых
+            if (adultSurcharge > 0) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Доплата за ' + (bookingData.adults - 1) + ' взрослый:</span><span>+' + adultSurcharge.toLocaleString() + ' ₽</span></div>';
+            }
+
+            // Показываем доплату за детей
+            if (childSurcharge > 0) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Доплата за ' + bookingData.children + ' детей:</span><span>+' + childSurcharge.toLocaleString() + ' ₽</span></div>';
+            }
+
+            if (bookingData.experiences.includes('beach')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Частный пляж:</span><span>+1 500 ₽</span></div>';
+            }
+            if (bookingData.experiences.includes('aqua')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Аквапарк:</span><span>+2 000 ₽</span></div>';
+            }
+            if (bookingData.experiences.includes('kids')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>KiDS Club:</span><span>+1 000 ₽/день</span></div>';
+            }
+            if (bookingData.experiences.includes('spa')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Talise Spa:</span><span>+3 000 ₽</span></div>';
+            }
+            if (bookingData.tours.includes('city')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Обзорная экскурсия по Сочи:</span><span>+2 500 ₽</span></div>';
+            }
+            if (bookingData.tours.includes('mountain')) {
+                offersHtml += '<div style="display: flex; justify-content: space-between;"><span>Горная экскурсия:</span><span>+3 500 ₽</span></div>';
+            }
+            document.getElementById('selected-offers').innerHTML = offersHtml;
+        }
+
+        function confirmBooking() {
+            alert('Бронирование подтверждено! Мы свяжемся с вами в ближайшее время.');
+        }
+
+        // Инициализация
+        selectRoomType('villas');
+        updatePrice();
+    </script>
+</body>
+</html>
+

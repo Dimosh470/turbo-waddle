@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все номера - Отель Сон Моряка</title>
+    <link rel="stylesheet" href="style.css/qwe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV5U0B9tU0l5N4h3zjC3gyAvxqYQTuYfR0rY9FD2O8vN4c/Uv9xownXSAq7xqk4clE7hQx4H1G1YxJ6t6Ib6cQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Cinzel:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .rooms-catalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .room-catalog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .room-catalog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .room-catalog-image {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .room-catalog-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .room-catalog-content h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            color: #000;
+        }
+        
+        .room-catalog-content p {
+            margin: 0.5rem 0 1.5rem 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .room-catalog-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 1rem;
+        }
+        
+        .room-features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            flex: 1;
+        }
+        
+        .room-features li {
+            padding: 0.3rem 0;
+            color: #666;
+        }
+        
+        .room-features li:before {
+            content: "✓ ";
+            color: #000;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .room-catalog-content .btn {
+            margin-top: auto;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Сон Моряка</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#home"><i class="fas fa-home"></i> Главная</a></li>
+                        <li><a href="index.html#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                        <li><a href="index.html#rooms"><i class="fas fa-bed"></i> Номера</a></li>
+                        <li><a href="index.html#services"><i class="fas fa-concierge-bell"></i> Услуги</a></li>
+                        <li><a href="index.html#offers"><i class="fas fa-gift"></i> Предложения</a></li>
+                        <li><a href="index.html#contact"><i class="fas fa-phone"></i> Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 140px; padding-bottom: 70px;">
+        <section style="background: #fff;">
+            <div class="container">
+                <h2 class="section-title">Все номера отеля</h2>
+                <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 2rem;">Выберите номер и быстро оформите заказ</p>
+                
+                <div class="rooms-catalog" id="rooms-catalog">
+                    <!-- Номера будут добавлены сюда JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно удалено - используется отдельная страница room-booking.html -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html#home">Главная</a>
+                <a href="index.html#about">О нас</a>
+                <a href="index.html#rooms">Номера</a>
+                <a href="index.html#services">Услуги</a>
+                <a href="index.html#offers">Предложения</a>
+                <a href="index.html#contact">Контакты</a>
+            </div>
+            <p>&copy; 2024 Отель "Сон моряка". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        const roomsData = [
+            {
+                id: 'studio',
+                name: 'Студия',
+                price: 2000,
+                description: 'Компактный и уютный номер',
+                image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3',
+                features: ['Wi-Fi бесплатный', 'Кондиционер', 'ТВ плазма', 'Мини-бар']
+            },
+            {
+                id: 'standard',
+                name: 'Стандартный номер',
+                price: 2500,
+                description: 'Уютный номер с видом на город',
+                image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3',
+                features: ['Wi-Fi бесплатный', 'Кондиционер', 'ТВ плазма', 'Душ с гелем']
+            },
+            {
+                id: 'superior',
+                name: 'Номер Superior',
+                price: 3500,
+                description: 'Улучшенный номер с дополнительным комфортом',
+                image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3',
+                features: ['Wi-Fi премиум', 'Кондиционер', 'ТВ Smart', 'Мини-бар', 'Халат']
+            },
+            {
+                id: 'luxury',
+                name: 'Люкс с видом на море',
+                price: 4500,
+                description: 'Просторный номер с панорамным видом на море',
+                image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3',
+                features: ['Wi-Fi премиум', 'Кондиционер', 'ТВ Smart', 'Балкон', 'Мини-кухня']
+            },
+            {
+                id: 'family',
+                name: 'Семейный номер',
+                price: 6000,
+                description: 'Просторный номер для семьи с двумя спальнями',
+                image: 'https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixlib=rb-4.0.3',
+                features: ['Wi-Fi премиум', '2 спальни', 'Гостиная', 'Кухня', 'Балкон']
+            },
+            {
+                id: 'presidential',
+                name: 'Президентский люкс',
+                price: 8500,
+                description: 'Роскошный номер-апартамент с видом на море',
+                image: 'https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixlib=rb-4.0.3',
+                features: ['Wi-Fi премиум', 'Личная спа-зона', 'Консьерж 24/7', 'Кухня', 'Терраса']
+            },
+            {
+                id: 'villas',
+                name: 'Виллы Al Bahar',
+                price: 12000,
+                description: 'Просторные виллы с собственными террасами и видом на море',
+                image: 'https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?ixlib=rb-4.0.3',
+                features: ['Wi-Fi премиум', 'Приватная терраса', 'Собственный бассейн', 'Полная кухня', 'Консьерж']
+            }
+        ];
+
+        let currentRoom = null;
+
+        function renderRooms() {
+            const catalog = document.getElementById('rooms-catalog');
+            catalog.innerHTML = roomsData.map(room => `
+                <div class="room-catalog-card">
+                    <div class="room-catalog-image" style="background-image: url('${room.image}')"></div>
+                    <div class="room-catalog-content">
+                        <h3>${room.name}</h3>
+                        <p>${room.description}</p>
+                        <ul class="room-features">
+                            ${room.features.map(f => `<li>${f}</li>`).join('')}
+                        </ul>
+                        <div class="room-catalog-price">${room.price.toLocaleString()} ₽/ночь</div>
+                        <a href="room-booking.html?room=${room.id}" class="btn" style="width: 100%; display: block; text-align: center; text-decoration: none;">Забронировать</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', renderRooms);
+    </script>
+</body>
+</html>

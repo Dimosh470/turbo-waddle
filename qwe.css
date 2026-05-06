@@ -1,0 +1,811 @@
+  /* Общие стили - ЧЕРНО-БЕЛАЯ ГАММА */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 0.95rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка - ЧЕРНО-БЕЛАЯ */
+        header {
+            background: #000;
+            color: white;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid #666;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            width: 100%;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        nav ul li a i {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #000;
+            background: #fff;
+        }
+
+        nav ul li a:hover i {
+            color: #000;
+        }
+
+        /* Страницы услуг (скрыты по умолчанию) */
+        .service-page {
+            display: none;
+            padding: 100px 0 70px;
+            background: #fff;
+            min-height: 100vh;
+        }
+
+        .service-page.active {
+            display: block;
+        }
+
+        .service-content-wrapper {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .service-main-content {
+            flex: 1;
+        }
+
+        .back-btn-side {
+            margin-top: 4rem;
+        }
+
+        .service-detail {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            color: #333;
+            border: 2px solid #ddd;
+        }
+
+        .service-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-image {
+            height: 200px;
+            background: #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #ddd;
+        }
+
+        /* КНОПКА НАЗАД */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #000;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .back-btn i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .back-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Герой секция */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 120px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            color: #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #000;
+            font-size: 1rem;
+            font-family: 'Playfair Display', serif;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #000;
+            border: 2px solid #000;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .service-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .service-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* О нас */
+        .about {
+            padding: 70px 0;
+            background: #f5f5f5;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #000;
+            font-size: 2rem;
+            position: relative;
+            font-weight: 700;
+            font-family: 'Cinzel', serif;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #000, transparent);
+            margin: 15px auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(100%);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 1.8rem;
+        }
+
+        .feature {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            color: #333;
+        }
+
+        .feature h4 {
+            margin-bottom: 0.5rem;
+            color: #000;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Номера */
+        .rooms {
+            padding: 70px 0;
+            background: #fff;
+        }
+
+        .rooms .rooms-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+        }
+
+        .room-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 2px solid #ddd;
+            color: #333;
+        }
+
+        .offers .room-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offers .room-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 36px rgba(0,0,0,0.15);
+        }
+
+        .room-image {
+            height: 200px;
+            background: #ccc;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%);
+        }
+
+        .room-info {
+            padding: 1.5rem;
+        }
+
+        .room-info h3 {
+            color: #000;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price {
+            color: #333;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0.8rem 0;
+        }
+
+        /* Услуги */
+        .services {
+            padding: 70px 0;
+            background: #f5f5f5;
+        }
+
+        .offers {
+            padding: 70px 0;
+            background: #fff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+            display: block;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .service-item:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+        }
+
+        .service-item:hover .service-icon {
+            color: #fff;
+        }
+
+        .service-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* НОВЫЙ РАЗДЕЛ: КАЛЬКУЛЯТОР БРОНИРОВАНИЯ */
+        .booking-section {
+            padding: 70px 0;
+            background: #fff;
+            border-top: 3px solid #000;
+            border-bottom: 3px solid #000;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .booking-options {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #ddd;
+        }
+
+        .booking-option {
+            margin-bottom: 1.8rem;
+        }
+
+        .booking-option label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #000;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .counter-control {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .counter-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #000;
+            background: #fff;
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .counter-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        .counter-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .room-type-selector {
+            margin-top: 2rem;
+        }
+
+        .room-type-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .room-type-option.selected {
+            border-color: #000;
+            background: #f0f0f0;
+        }
+
+        .room-type-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .room-type-option label {
+            flex: 1;
+            cursor: pointer;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .room-type-price {
+            font-weight: 600;
+            color: #000;
+        }
+
+        .booking-summary {
+            background: #000;
+            padding: 2rem;
+            border-radius: 15px;
+            color: #fff;
+            border: 2px solid #333;
+            position: sticky;
+            top: 140px;
+            height: fit-content;
+        }
+
+        .summary-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .total-price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            text-align: center;
+            color: #fff;
+            font-family: 'Cinzel', serif;
+        }
+
+        .extras {
+            margin: 1.5rem 0;
+        }
+
+        .extra-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .extra-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .extra-item label {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 15px;
+            background: #fff;
+            color: #000;
+            border: 2px solid #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Playfair Display', serif;
+            margin-top: 1rem;
+        }
+
+        .book-btn:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Контакты */
+        .contact {
+            padding: 70px 0;
+            background: #000;
+        }
+
+        .contact .section-title {
+            color: #fff;
+        }
+
+        .contact .section-title:after {
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .contact-info {
+            color: #ccc;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 0.8rem;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 2px solid #ddd;
+        }
+
+        .contact-form h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #f5f5f5;
+            color: #333;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-family: 'Playfair Display', serif;
+            border: 2px solid #000;
+        }
+
+        .contact-form button:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Подвал */
+        footer {
+            background: #111;
+            color: #ccc;
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 2px solid #333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0 2rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+        }
+
+        /* Страница 404 */
+        .error-404 {
+            font-family: 'Cinzel', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            color: #000;
+            line-height: 1;
+            margin: 2rem 0;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-fact {
+            background: #f5f5f5;
+            color: #333;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+        }
+
+        .error-fact i {
+            color: #000;
+            font-size: 1.5rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Фиксированные размеры без адаптации */
+        .rooms-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .services-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .about-content {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .contact-content {
+            grid-template-columns: 1fr 1fr;
+        }
